@@ -1,0 +1,105 @@
+{
+  "variant": "triage_v4",
+  "passed": 14,
+  "total": 14,
+  "results": [
+    {
+      "id": "t01",
+      "question": "Hola",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t02",
+      "question": "Buenas, qué tal?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t03",
+      "question": "Cuánto sale el buzo canguro?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t04",
+      "question": "A qué hora abren los sábados?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t05",
+      "question": "De qué color es una naranja?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t06",
+      "question": "Cuánto sale?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t07",
+      "question": "Quién ganó el partido de ayer?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t08",
+      "question": "Quiero hablar con una persona",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t09",
+      "question": "Pasame con el dueño por favor",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t10",
+      "question": "Hacen bordado con el logo de mi marca?",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t11",
+      "question": "Me llegó el pedido incompleto y quiero hacer un reclamo",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t12",
+      "question": "Dale, confirmame el pedido de 40 buzos y te transfiero ahora",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t13",
+      "question": "Y cuánto cuesta una naranja?",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t14",
+      "question": "Los buzos canguro",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    }
+  ]
+}

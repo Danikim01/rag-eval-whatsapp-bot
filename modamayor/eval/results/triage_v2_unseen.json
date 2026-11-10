@@ -1,0 +1,189 @@
+{
+  "variant": "triage_v2_unseen",
+  "passed": 26,
+  "total": 26,
+  "results": [
+    {
+      "id": "t01",
+      "question": "Hola",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t02",
+      "question": "Buenas, qué tal?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t03",
+      "question": "Cuánto sale el buzo canguro?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t04",
+      "question": "A qué hora abren los sábados?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t05",
+      "question": "De qué color es una naranja?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t06",
+      "question": "Cuánto sale?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t07",
+      "question": "Quién ganó el partido de ayer?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t08",
+      "question": "Quiero hablar con una persona",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t09",
+      "question": "Pasame con el dueño por favor",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t10",
+      "question": "Hacen bordado con el logo de mi marca?",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t11",
+      "question": "Me llegó el pedido incompleto y quiero hacer un reclamo",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t12",
+      "question": "Dale, confirmame el pedido de 40 buzos y te transfiero ahora",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t13",
+      "question": "Y cuánto cuesta una naranja?",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t14",
+      "question": "Los buzos canguro",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t15",
+      "question": "Buen día, necesito precios de remeras",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t16",
+      "question": "Hasta qué hora atienden los viernes?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t17",
+      "question": "Aceptan transferencia?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t18",
+      "question": "Hacen envíos al interior?",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t19",
+      "question": "Recomendame una receta de milanesas",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t20",
+      "question": "Cuál es la capital de Francia?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t21",
+      "question": "Precio?",
+      "expected": "clarify",
+      "got": "clarify",
+      "passed": true
+    },
+    {
+      "id": "t22",
+      "question": "Los jeans que me mandaron vinieron fallados, quiero un reembolso",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t23",
+      "question": "Pueden facturarme a nombre de la razón social de mi socio?",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t24",
+      "question": "Necesito hablar con alguien ya",
+      "expected": "handoff",
+      "got": "handoff",
+      "passed": true
+    },
+    {
+      "id": "t25",
+      "question": "Gracias!",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    },
+    {
+      "id": "t26",
+      "question": "Las remeras estampadas",
+      "expected": "answer",
+      "got": "answer",
+      "passed": true
+    }
+  ]
+}

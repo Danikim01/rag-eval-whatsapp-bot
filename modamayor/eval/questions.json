@@ -1,0 +1,347 @@
+{
+  "business": "Casa Beltran Mayorista (ficticio)",
+  "as_of": "2026-11-09",
+  "questions": [
+    {
+      "id": "m01",
+      "type": "directa",
+      "question": "Cuanto sale la remera lisa de algodon?",
+      "expected_answer": "$4.800 por unidad, se vende por curva de 12.",
+      "key_facts": [
+        "4800"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m02",
+      "type": "directa",
+      "question": "Que trae la curva de remeras?",
+      "expected_answer": "12 remeras: 3 S, 3 M, 3 L y 3 XL.",
+      "key_facts": [
+        "3 S",
+        "3 M",
+        "3 L",
+        "3 XL"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m03",
+      "type": "directa",
+      "question": "Cual es el minimo para llevar camperas rompevientos y a cuanto estan?",
+      "expected_answer": "Minimo 4 unidades, a $24.900 cada una.",
+      "key_facts": [
+        "4",
+        "24900"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m04",
+      "type": "directa",
+      "question": "En que talles hay jean mom?",
+      "expected_answer": "Del 36 al 46.",
+      "key_facts": [
+        "36",
+        "46"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m05",
+      "type": "directa",
+      "question": "Aceptan tarjeta de credito?",
+      "expected_answer": "No. Solo efectivo y transferencia bancaria, sin tarjetas ni cheques.",
+      "key_facts": [
+        "tarjeta"
+      ],
+      "sources": [
+        "condiciones_de_venta.md"
+      ],
+      "handoff": false,
+      "must_not_say": [
+        "si, aceptamos",
+        "si aceptamos"
+      ]
+    },
+    {
+      "id": "m06",
+      "type": "directa",
+      "question": "Hasta que hora atienden los sabados y donde estan?",
+      "expected_answer": "Los sabados de 9 a 13 hs, en Av. Pueyrredon 512, Once, CABA.",
+      "key_facts": [
+        "13",
+        "Pueyrredon 512"
+      ],
+      "sources": [
+        "condiciones_de_venta.md"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m07",
+      "type": "directa",
+      "question": "Cuanto tardan en preparar el pedido?",
+      "expected_answer": "48 horas habiles desde que el pago esta acreditado.",
+      "key_facts": [
+        "48",
+        "habiles",
+        "acreditado"
+      ],
+      "sources": [
+        "condiciones_de_venta.md"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m08",
+      "type": "directa",
+      "question": "Si me llega algo que no me gusta puedo cambiarlo o me devuelven la plata?",
+      "expected_answer": "No hay devolucion de dinero. Solo se cambia por falla de fabrica, dentro de los 7 dias corridos de recibido y con la etiqueta puesta.",
+      "key_facts": [
+        "falla de fabrica",
+        "7",
+        "etiqueta",
+        "devolucion"
+      ],
+      "sources": [
+        "condiciones_de_venta.md"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m09",
+      "type": "directa",
+      "question": "En que colores viene el jean de hombre y hasta que talle llega?",
+      "expected_answer": "Azul, negro y celeste, del talle 38 al 48.",
+      "key_facts": [
+        "azul",
+        "negro",
+        "celeste",
+        "48"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m10",
+      "type": "directa",
+      "question": "Hice la transferencia hoy a las 16, desde cuando cuenta el plazo?",
+      "expected_answer": "Los pagos que entran despues de las 15 se toman como del dia habil siguiente.",
+      "key_facts": [
+        "dia habil siguiente"
+      ],
+      "sources": [
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m11",
+      "type": "multi-doc",
+      "question": "Si llevo 40 buzos frisa y pago por transferencia, cuanto pago en total?",
+      "expected_answer": "40 x $17.800 = $712.000, menos 8% por transferencia = $655.040.",
+      "key_facts": [
+        "712000",
+        "8%",
+        "655040"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "condiciones_de_venta.md",
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m12",
+      "type": "multi-doc",
+      "question": "Con una sola curva de remeras lisas llego al minimo de compra?",
+      "expected_answer": "No. Una curva son 12 x $4.800 = $57.600 y el minimo de compra es $200.000.",
+      "key_facts": [
+        "57600",
+        "200000"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m13",
+      "type": "multi-doc",
+      "question": "Compro 25 jeans clasicos de hombre y pago en efectivo, soy de CABA, el envio es gratis?",
+      "expected_answer": "Si. 25 x $19.500 = $487.500, supera los $400.000 del envio gratis a CABA y GBA.",
+      "key_facts": [
+        "487500",
+        "400000",
+        "gratis"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "condiciones_de_venta.md"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m14",
+      "type": "multi-doc",
+      "question": "Tienen jean clasico negro talle 46?",
+      "expected_answer": "El modelo existe en talle 46 pero ese talle en negro esta agotado, reingresa aproximadamente el 20/11.",
+      "key_facts": [
+        "agotado",
+        "20/11"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m15",
+      "type": "contradiccion",
+      "question": "A cuanto esta el buzo frisa canguro?",
+      "expected_answer": "$17.800 por unidad, minimo x6. El precio de $14.500 es de la lista de junio y esta desactualizado.",
+      "key_facts": [
+        "17800"
+      ],
+      "must_not_say": [
+        "14500"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "lista_precios_jun2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m16",
+      "type": "contradiccion",
+      "question": "Cual es la compra minima?",
+      "expected_answer": "$200.000 desde el 1/11. Los $250.000 de las condiciones de venta quedaron viejos.",
+      "key_facts": [
+        "200000"
+      ],
+      "must_not_say": [
+        "250000"
+      ],
+      "sources": [
+        "condiciones_de_venta.md",
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m17",
+      "type": "contradiccion",
+      "question": "Cuanto descuento hay si pago por transferencia?",
+      "expected_answer": "8%. El 10% de las condiciones de venta quedo viejo.",
+      "key_facts": [
+        "8%"
+      ],
+      "must_not_say": [
+        "10%"
+      ],
+      "sources": [
+        "condiciones_de_venta.md",
+        "chat_dueno_whatsapp.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m18",
+      "type": "sin-respuesta",
+      "question": "Hacen estampado personalizado con el logo de mi marca?",
+      "expected_answer": "No hay informacion. Debe derivar a una persona.",
+      "key_facts": [],
+      "sources": [],
+      "handoff": true
+    },
+    {
+      "id": "m19",
+      "type": "sin-respuesta",
+      "question": "Emiten factura A?",
+      "expected_answer": "No hay informacion. Debe derivar a una persona.",
+      "key_facts": [],
+      "sources": [],
+      "handoff": true
+    },
+    {
+      "id": "m20",
+      "type": "sin-respuesta",
+      "question": "Tienen ropa de nenes?",
+      "expected_answer": "No hay informacion. Debe derivar a una persona.",
+      "key_facts": [],
+      "sources": [],
+      "handoff": true
+    },
+    {
+      "id": "m21",
+      "type": "contradiccion",
+      "question": "Cuanto sale la remera estampada?",
+      "expected_answer": "$5.600 por unidad, curva x12. Los $4.700 son de la lista de junio.",
+      "key_facts": [
+        "5600"
+      ],
+      "must_not_say": [
+        "4700"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "lista_precios_jun2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m22",
+      "type": "contradiccion",
+      "question": "A cuanto esta el jean clasico de hombre?",
+      "expected_answer": "$19.500 por unidad, minimo x6. Los $15.800 son de la lista de junio.",
+      "key_facts": [
+        "19500"
+      ],
+      "must_not_say": [
+        "15800"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "lista_precios_jun2026.txt"
+      ],
+      "handoff": false
+    },
+    {
+      "id": "m23",
+      "type": "contradiccion",
+      "question": "Cuanto cuesta la calza larga de lycra?",
+      "expected_answer": "$6.900 por unidad, curva x12. Los $5.600 son de la lista de junio.",
+      "key_facts": [
+        "6900"
+      ],
+      "must_not_say": [
+        "5600"
+      ],
+      "sources": [
+        "lista_precios_oct2026.txt",
+        "lista_precios_jun2026.txt"
+      ],
+      "handoff": false
+    }
+  ],
+  "notes": "m01, m03 y m09 tambien caen en la trampa de junio (4800 vs 3900, 24900 vs 20500, talles hasta 48 vs 46)."
+}

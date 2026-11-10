@@ -1,0 +1,531 @@
+{
+  "variant": "full_v1",
+  "k": 4,
+  "summary": {
+    "passed": 21,
+    "total": 23,
+    "by_type": {
+      "directa": [
+        9,
+        10
+      ],
+      "multi-doc": [
+        4,
+        4
+      ],
+      "contradiccion": [
+        5,
+        6
+      ],
+      "sin-respuesta": [
+        3,
+        3
+      ]
+    },
+    "retrieval_hits": 18
+  },
+  "results": [
+    {
+      "id": "m01",
+      "type": "directa",
+      "question": "Cuanto sale la remera lisa de algodon?",
+      "answer": "La remera lisa de algodón cuesta $4.800 por unidad. El mínimo es 12 unidades y se vende por curva de 12: 3 S, 3 M, 3 L, 3 XL.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m02",
+      "type": "directa",
+      "question": "Que trae la curva de remeras?",
+      "answer": "La curva de remeras incluye 3 S, 3 M, 3 L y 3 XL.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m03",
+      "type": "directa",
+      "question": "Cual es el minimo para llevar camperas rompevientos y a cuanto estan?",
+      "answer": "El mínimo para llevar camperas rompevientos es 4 unidades, y cada una cuesta $24.900. El subtotal sería $99.600, pero no alcanza la compra mínima de $200.000.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m04",
+      "type": "directa",
+      "question": "En que talles hay jean mom?",
+      "answer": "El jean mom está en talles 36 al 46.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m05",
+      "type": "directa",
+      "question": "Aceptan tarjeta de credito?",
+      "answer": "No, no aceptamos tarjetas de crédito. Aceptamos efectivo y transferencia bancaria. Con transferencia tenés un 8% de descuento.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m06",
+      "type": "directa",
+      "question": "Hasta que hora atienden los sabados y donde estan?",
+      "answer": "Atendemos los sábados de 9 a 13 hs. Estamos en Av. Pueyrredón 512, Once, CABA.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m07",
+      "type": "directa",
+      "question": "Cuanto tardan en preparar el pedido?",
+      "answer": "El pedido se prepara dentro de las 48 horas hábiles después de que el pago esté acreditado. Las transferencias que llegan después de las 15 hs se consideran del día hábil siguiente.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m08",
+      "type": "directa",
+      "question": "Si me llega algo que no me gusta puedo cambiarlo o me devuelven la plata?",
+      "answer": "Para esto te paso con una persona. Escribile directo acá y ya le llega tu consulta: https://wa.me/5491100000000?text=Hola%2C%20vengo%20del%20asistente.%20Mi%20consulta%3A%20Si%20me%20llega%20algo%20que%20no%20me%20gusta%20puedo%20cambiarlo%20o%20me%20devuelven%20la%20plata%3F%20%28motivo%3A%20consulta%20que%20el%20asistente%20no%20puede%20resolver%29",
+      "passed": false,
+      "missing": [
+        "falla de fabrica",
+        "7",
+        "etiqueta",
+        "devolucion"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": false
+    },
+    {
+      "id": "m09",
+      "type": "directa",
+      "question": "En que colores viene el jean de hombre y hasta que talle llega?",
+      "answer": "El jean de hombre viene en azul, negro y celeste. Llega hasta el talle 48.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m10",
+      "type": "directa",
+      "question": "Hice la transferencia hoy a las 16, desde cuando cuenta el plazo?",
+      "answer": "La transferencia que entró hoy a las 16 hs se cuenta como del día hábil siguiente, así que el plazo comienza mañana.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m11",
+      "type": "multi-doc",
+      "question": "Si llevo 40 buzos frisa y pago por transferencia, cuanto pago en total?",
+      "answer": "Si llevás 40 buzos frisa, el subtotal es $712.000. Con el descuento por transferencia del 8%, pagás $655.040. El mínimo de compra se alcanza, y si la zona es CABA o GBA, el envío es gratis.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m12",
+      "type": "multi-doc",
+      "question": "Con una sola curva de remeras lisas llego al minimo de compra?",
+      "answer": "Una curva de remeras lisas es 12 unidades, que valen $57.600. No alcanza el mínimo de compra de $200.000. Necesitás sumar más artículos o curvas para llegar al mínimo.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m13",
+      "type": "multi-doc",
+      "question": "Compro 25 jeans clasicos de hombre y pago en efectivo, soy de CABA, el envio es gratis?",
+      "answer": "Sí, el envío es gratis porque compraste 25 jeans clásicos de hombre (mínimo 6 unidades) y el subtotal es $487.500, lo cual supera los $400.000 para envío gratis en CABA. Además, pagando en efectivo no aplican descuentos.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m14",
+      "type": "multi-doc",
+      "question": "Tienen jean clasico negro talle 46?",
+      "answer": "El jean clásico negro talle 46 está agotado, pero vuelve el 20/11. Podés venir a verlo o consultarnos por WhatsApp.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m15",
+      "type": "contradiccion",
+      "question": "A cuanto esta el buzo frisa canguro?",
+      "answer": "El buzo frisa canguro (BUZO FRISA CANG) está a $17.800 por unidad. El mínimo de compra es 6 unidades. No alcanza el mínimo de $200.000, así que no se aplica envío gratis. Podés comprarlo en el local o por WhatsApp. ¿Querés más info?",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m16",
+      "type": "contradiccion",
+      "question": "Cual es la compra minima?",
+      "answer": "La compra mínima es de $200.000 por pedido, sumando todos los artículos. Además, cada artículo tiene su mínimo de compra según su tipo. ¿Querés saber más sobre algún producto?",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m17",
+      "type": "contradiccion",
+      "question": "Cuanto descuento hay si pago por transferencia?",
+      "answer": "Hay un descuento del 8% sobre el total si pagás por transferencia.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m18",
+      "type": "sin-respuesta",
+      "question": "Hacen estampado personalizado con el logo de mi marca?",
+      "answer": "Para esto te paso con una persona. Escribile directo acá y ya le llega tu consulta: https://wa.me/5491100000000?text=Hola%2C%20vengo%20del%20asistente.%20Mi%20consulta%3A%20Hacen%20estampado%20personalizado%20con%20el%20logo%20de%20mi%20marca%3F%20%28motivo%3A%20consulta%20que%20el%20asistente%20no%20puede%20resolver%29",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m19",
+      "type": "sin-respuesta",
+      "question": "Emiten factura A?",
+      "answer": "Para esto te paso con una persona. Escribile directo acá y ya le llega tu consulta: https://wa.me/5491100000000?text=Hola%2C%20vengo%20del%20asistente.%20Mi%20consulta%3A%20Emiten%20factura%20A%3F%20%28motivo%3A%20consulta%20que%20el%20asistente%20no%20puede%20resolver%29",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m20",
+      "type": "sin-respuesta",
+      "question": "Tienen ropa de nenes?",
+      "answer": "No tenés ese dato. Te paso con una persona.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m21",
+      "type": "contradiccion",
+      "question": "Cuanto sale la remera estampada?",
+      "answer": "Perdón, no te entendí bien. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos y horarios. ¿Me contás qué necesitás?",
+      "passed": false,
+      "missing": [
+        "5600"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m22",
+      "type": "contradiccion",
+      "question": "A cuanto esta el jean clasico de hombre?",
+      "answer": "El jean clásico de hombre está a $19.500 por unidad. Tenés que comprar mínimo 6 unidades. Los talles disponibles son 38 al 48 en los colores azul, negro y celeste. El negro talle 46 está agotado y vuelve el 20/11. ¿Querés más info?",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m23",
+      "type": "contradiccion",
+      "question": "Cuanto cuesta la calza larga de lycra?",
+      "answer": "La calza larga de lycra cuesta $6.900 por unidad. El mínimo de compra es 12 unidades.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    }
+  ],
+  "retrieval": [
+    {
+      "id": "m01",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:remera_lisa",
+        "article:remera_estampada",
+        "article:calza_larga_lycra",
+        "article:jean_mom_mujer"
+      ]
+    },
+    {
+      "id": "m02",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:remera_estampada",
+        "article:remera_lisa",
+        "rule:payment",
+        "rule:shipping"
+      ]
+    },
+    {
+      "id": "m03",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:campera_rompevientos",
+        "article:remera_estampada",
+        "rule:min_purchase",
+        "article:jean_mom_mujer"
+      ]
+    },
+    {
+      "id": "m04",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:jean_mom_mujer",
+        "stock:jean_clasico_negro_46",
+        "article:jean_clasico_hombre",
+        "article:remera_estampada"
+      ]
+    },
+    {
+      "id": "m05",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "rule:payment",
+        "policy:cambios",
+        "policy:atencion",
+        "rule:shipping"
+      ]
+    },
+    {
+      "id": "m06",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "policy:atencion",
+        "policy:plazos",
+        "policy:cambios",
+        "rule:shipping"
+      ]
+    },
+    {
+      "id": "m07",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "policy:plazos",
+        "policy:cambios",
+        "policy:atencion",
+        "rule:min_purchase"
+      ]
+    },
+    {
+      "id": "m08",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "policy:cambios",
+        "rule:payment",
+        "rule:shipping",
+        "rule:min_purchase"
+      ]
+    },
+    {
+      "id": "m09",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:jean_clasico_hombre",
+        "stock:jean_clasico_negro_46",
+        "article:jean_mom_mujer",
+        "article:remera_estampada"
+      ]
+    },
+    {
+      "id": "m10",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "policy:plazos",
+        "rule:payment",
+        "policy:atencion",
+        "policy:cambios"
+      ]
+    },
+    {
+      "id": "m11",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:buzo_frisa_canguro",
+        "rule:payment",
+        "rule:shipping",
+        "policy:plazos"
+      ]
+    },
+    {
+      "id": "m12",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "rule:min_purchase",
+        "article:remera_lisa",
+        "article:remera_estampada",
+        "article:jean_mom_mujer"
+      ]
+    },
+    {
+      "id": "m13",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "rule:shipping",
+        "article:jean_clasico_hombre",
+        "rule:payment",
+        "policy:atencion"
+      ]
+    },
+    {
+      "id": "m14",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "stock:jean_clasico_negro_46",
+        "article:jean_clasico_hombre",
+        "article:jean_mom_mujer",
+        "article:calza_larga_lycra"
+      ]
+    },
+    {
+      "id": "m15",
+      "hit": false,
+      "missing_sources": [
+        "lista_precios_jun2026.txt"
+      ],
+      "retrieved_ids": [
+        "article:buzo_frisa_canguro",
+        "article:remera_lisa",
+        "article:calza_larga_lycra",
+        "policy:atencion"
+      ]
+    },
+    {
+      "id": "m16",
+      "hit": false,
+      "missing_sources": [
+        "condiciones_de_venta.md"
+      ],
+      "retrieved_ids": [
+        "rule:min_purchase",
+        "article:jean_mom_mujer",
+        "article:remera_lisa",
+        "article:remera_estampada"
+      ]
+    },
+    {
+      "id": "m17",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "rule:payment",
+        "rule:shipping",
+        "rule:min_purchase",
+        "policy:plazos"
+      ]
+    },
+    {
+      "id": "m18",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:remera_estampada",
+        "policy:cambios",
+        "rule:shipping",
+        "rule:min_purchase"
+      ]
+    },
+    {
+      "id": "m19",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:remera_estampada",
+        "rule:shipping",
+        "rule:payment",
+        "rule:min_purchase"
+      ]
+    },
+    {
+      "id": "m20",
+      "hit": true,
+      "missing_sources": [],
+      "retrieved_ids": [
+        "article:jean_mom_mujer",
+        "article:remera_estampada",
+        "article:remera_lisa",
+        "stock:jean_clasico_negro_46"
+      ]
+    },
+    {
+      "id": "m21",
+      "hit": false,
+      "missing_sources": [
+        "lista_precios_jun2026.txt"
+      ],
+      "retrieved_ids": [
+        "article:remera_estampada",
+        "article:remera_lisa",
+        "article:campera_rompevientos",
+        "article:jean_mom_mujer"
+      ]
+    },
+    {
+      "id": "m22",
+      "hit": false,
+      "missing_sources": [
+        "lista_precios_jun2026.txt"
+      ],
+      "retrieved_ids": [
+        "article:jean_clasico_hombre",
+        "stock:jean_clasico_negro_46",
+        "article:jean_mom_mujer",
+        "article:calza_larga_lycra"
+      ]
+    },
+    {
+      "id": "m23",
+      "hit": false,
+      "missing_sources": [
+        "lista_precios_jun2026.txt"
+      ],
+      "retrieved_ids": [
+        "article:calza_larga_lycra",
+        "article:remera_lisa",
+        "article:buzo_frisa_canguro",
+        "article:jean_clasico_hombre"
+      ]
+    }
+  ]
+}

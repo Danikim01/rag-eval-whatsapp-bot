@@ -1,0 +1,30 @@
+{
+  "questions": [
+    {"id": "t01", "question": "Hola", "history": [], "action": "answer"},
+    {"id": "t02", "question": "Buenas, qué tal?", "history": [], "action": "answer"},
+    {"id": "t03", "question": "Cuánto sale el buzo canguro?", "history": [], "action": "answer"},
+    {"id": "t04", "question": "A qué hora abren los sábados?", "history": [], "action": "answer"},
+    {"id": "t05", "question": "De qué color es una naranja?", "history": [], "action": "clarify"},
+    {"id": "t06", "question": "Cuánto sale?", "history": [], "action": "clarify"},
+    {"id": "t07", "question": "Quién ganó el partido de ayer?", "history": [], "action": "clarify"},
+    {"id": "t08", "question": "Quiero hablar con una persona", "history": [], "action": "handoff"},
+    {"id": "t09", "question": "Pasame con el dueño por favor", "history": [], "action": "handoff"},
+    {"id": "t10", "question": "Hacen bordado con el logo de mi marca?", "history": [], "action": "handoff"},
+    {"id": "t11", "question": "Me llegó el pedido incompleto y quiero hacer un reclamo", "history": [], "action": "handoff"},
+    {"id": "t12", "question": "Dale, confirmame el pedido de 40 buzos y te transfiero ahora", "history": [], "action": "handoff"},
+    {"id": "t13", "question": "Y cuánto cuesta una naranja?", "history": [["user", "De qué color es una naranja?"], ["assistant", "Perdón, no te entendí bien. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos y horarios. ¿Me contás qué necesitás?"]], "action": "handoff"},
+    {"id": "t14", "question": "Los buzos canguro", "history": [["user", "Cuánto sale?"], ["assistant", "Perdón, no te entendí bien. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos y horarios. ¿Me contás qué necesitás?"]], "action": "answer"},
+    {"id": "t15", "question": "Buen día, necesito precios de remeras", "history": [], "action": "answer"},
+    {"id": "t16", "question": "Hasta qué hora atienden los viernes?", "history": [], "action": "answer"},
+    {"id": "t17", "question": "Aceptan transferencia?", "history": [], "action": "answer"},
+    {"id": "t18", "question": "Hacen envíos al interior?", "history": [], "action": "answer"},
+    {"id": "t19", "question": "Recomendame una receta de milanesas", "history": [], "action": "clarify"},
+    {"id": "t20", "question": "Cuál es la capital de Francia?", "history": [], "action": "clarify"},
+    {"id": "t21", "question": "Precio?", "history": [], "action": "clarify"},
+    {"id": "t22", "question": "Los jeans que me mandaron vinieron fallados, quiero un reembolso", "history": [], "action": "handoff"},
+    {"id": "t23", "question": "Pueden facturarme a nombre de la razón social de mi socio?", "history": [], "action": "handoff"},
+    {"id": "t24", "question": "Necesito hablar con alguien ya", "history": [], "action": "handoff"},
+    {"id": "t25", "question": "Gracias!", "history": [], "action": "answer"},
+    {"id": "t26", "question": "Las remeras estampadas", "history": [["user", "Cuánto sale?"], ["assistant", "Perdón, no te entendí bien. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos y horarios. ¿Me contás qué necesitás?"]], "action": "answer"}
+  ]
+}

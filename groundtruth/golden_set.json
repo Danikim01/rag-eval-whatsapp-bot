@@ -1,0 +1,794 @@
+{
+  "version": 1,
+  "commit": "ba47d6d71b3e806900c8471f2f661781b8c43ec4",
+  "questions": [
+    {
+      "id": "q001",
+      "question": "Which HTTP methods should I use to send a request body?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body",
+          "evidence": "POST (the most common), PUT, DELETE or PATCH"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q002",
+      "question": "Can I send a body in a GET request with FastAPI?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body",
+          "evidence": "supported by FastAPI, only for very complex/extreme use cases"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q003",
+      "question": "How do I make a field of my Pydantic model optional?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/body.md#create-your-data-model",
+          "evidence": "Use None to make it just optional."
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q004",
+      "question": "What happens when the data sent by the client is invalid?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body.md#results",
+          "evidence": "return a nice and clear error, indicating exactly where and what was the incorrect data"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q005",
+      "question": "How does FastAPI decide if a parameter is path, query or body?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body-path-query-parameters",
+          "evidence": [
+            "it will be used as a path parameter",
+            "singular type (like int, float, str, bool, etc) it will be interpreted as a query parameter",
+            "it will be interpreted as a request body"
+          ]
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q006",
+      "question": "Does writing `str | None` make a query parameter optional?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body-path-query-parameters",
+          "evidence": "it will know it's not required because it has a default value of = None"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q007",
+      "question": "Do I have to use Pydantic to receive body data?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body.md#without-pydantic",
+          "evidence": "you can also use Body parameters"
+        },
+        {
+          "id": "tutorial/body-multiple-params.md#singular-values-in-body",
+          "evidence": "you can instruct FastAPI to treat it as another body key using Body"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q009",
+      "question": "Can I reuse the JSON Schema generated for my models elsewhere?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/body.md#results",
+          "evidence": "you can also use them anywhere else you like"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q010",
+      "question": "Is there a plugin that improves Pydantic support in PyCharm?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/body.md#editor-support",
+          "evidence": "Pydantic PyCharm Plugin"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q011",
+      "question": "Why is my request body not showing up in the Swagger UI docs for a specific endpoint?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body",
+          "evidence": "won't show the documentation for the body when using GET"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q012",
+      "question": "How do I read the actual values sent in the JSON payload from inside my route function?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body.md#use-the-model",
+          "evidence": "Inside of the function, you can access all the attributes of the model object directly"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q013",
+      "question": "Why is it discouraged to send a body in a GET request?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/body.md#request-body",
+          "evidence": "has an undefined behavior in the specifications"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q014",
+      "question": "How are query parameters sent in a request?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/query-params.md#query-parameters",
+          "evidence": "The query is the set of key-value pairs that go after the ? in a URL, separated by & characters."
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q015",
+      "question": "How can I deserialize a response?",
+      "lang": "en",
+      "category": "ambiguous",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/body.md#results",
+          "evidence": "Read the body of the request as JSON"
+        },
+        {
+          "id": "tutorial/response-model.md#response-model-return-type",
+          "evidence": "Serialize the returned data to JSON using Pydantic"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q016",
+      "question": "Why does /users/me return the wrong result when /users/{user_id} is declared first?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/path-params.md#order-matters",
+          "evidence": "Because *path operations* are evaluated in order"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q017",
+      "question": "How do I make a path parameter contain a full path, like home/johndoe/myfile.txt?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/path-params.md#path-convertor",
+          "evidence": "/files/{file_path:path}"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q018",
+      "question": "Does OpenAPI support path parameters that contain a path?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/path-params.md#openapi-support",
+          "evidence": "OpenAPI doesn't support a way to declare a *path parameter* to contain a *path* inside"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q019",
+      "question": "Why do I receive item_id as an int and not as the string from the URL?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/path-params.md#data-conversion",
+          "evidence": [
+            "FastAPI** gives you automatic request",
+            "<dfn title=\"converting the string that comes from an HTTP request into Python data\">\"parsing\"</dfn>"
+          ]
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q020",
+      "question": "Does declaring q as `str | None` without a default make a Query parameter optional?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/query-params-str-validations.md#required-parameters-and-none",
+          "evidence": "does not make a query parameter optional"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q021",
+      "question": "How do I make a query parameter required when I use Query?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/query-params-str-validations.md#required-parameters",
+          "evidence": [
+            "you can simply not declare a default value",
+            "{* ../../docs_src/query_params_str_validations/tutorial006_an_py310.py hl[9] *}"
+          ]
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q022",
+      "question": "How can I use a query parameter name that is not a valid Python variable, like item-query?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/query-params-str-validations.md#alias-parameters",
+          "evidence": "you can declare an `alias`"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q023",
+      "question": "How do I hide a query parameter from the generated OpenAPI docs?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/query-params-str-validations.md#exclude-parameters-from-openapi",
+          "evidence": "include_in_schema"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q024",
+      "question": "Why is my extra `importance` field treated as a query parameter instead of part of the JSON body?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/body-multiple-params.md#singular-values-in-body",
+          "evidence": "because it is a singular value, **FastAPI** will assume that it is a query parameter"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q025",
+      "question": "How do I make FastAPI expect a JSON with an `item` key when I only have one body model?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body-multiple-params.md#embed-a-single-body-parameter",
+          "evidence": "Body(embed=True)"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q026",
+      "question": "How do I receive several Pydantic models in the same request body?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/body-multiple-params.md#multiple-body-parameters",
+          "evidence": "Multiple body parameters"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q027",
+      "question": "How do I avoid returning the user's plaintext password in the response?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/response-model.md#add-an-output-model",
+          "evidence": "FastAPI** will take care of filtering out all the data that is not declared in the output model"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q028",
+      "question": "Can I annotate the return type with a parent class and still filter fields from the response?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/response-model.md#fastapi-data-filtering",
+          "evidence": "make sure that what you return includes **only** the fields that are declared in the type"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q029",
+      "question": "Why do editors and mypy not complain when I return UserIn from a function annotated as BaseUser?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/response-model.md#type-annotations-and-tooling",
+          "evidence": "`UserIn` is a subclass of `BaseUser`"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q030",
+      "question": "How do I override the default response for invalid request data?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "expected": [
+        {
+          "id": "tutorial/handling-errors.md#override-request-validation-exceptions",
+          "evidence": "@app.exception_handler(RequestValidationError)"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q031",
+      "question": "Why shouldn't I return str(exc) of a RequestValidationError directly?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/handling-errors.md#override-the-httpexception-error-handler",
+          "evidence": "you could be leaking a bit of information about your system"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q032",
+      "question": "Should I register my handler for FastAPI's HTTPException or Starlette's?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "expected": [
+        {
+          "id": "tutorial/handling-errors.md#use-the-requestvalidationerror-body",
+          "evidence": "you should register it for Starlette's `HTTPException`"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q033",
+      "question": "Do I return or raise an HTTPException?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "expected": [
+        {
+          "id": "tutorial/handling-errors.md#raise-an-httpexception-in-your-code",
+          "evidence": "you don't `return` it, you `raise` it"
+        }
+      ],
+      "verified_by": "daniel"
+    },
+    {
+      "id": "q034",
+      "question": "How should I write the CMD in my Dockerfile so FastAPI shuts down gracefully?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/docker.md#dockerfile",
+          "evidence": "Make sure to always use the exec form to ensure that FastAPI can shutdown gracefully"
+        }
+      ]
+    },
+    {
+      "id": "q035",
+      "question": "Should I use --workers inside each container when my cluster already replicates containers?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/docker.md#one-process-per-container",
+          "evidence": "you would not want to have multiple workers in the container"
+        }
+      ]
+    },
+    {
+      "id": "q036",
+      "question": "Why is running a single process per container good for memory management?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/docker.md#memory",
+          "evidence": "you will have a more or less well-defined, stable, and limited amount of memory consumed by each of those containers"
+        }
+      ]
+    },
+    {
+      "id": "q037",
+      "question": "Why does my app behind a TLS proxy not know the original request used HTTPS?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/https.md#proxy-forwarded-headers",
+          "evidence": "by default, it wouldn't trust those headers"
+        }
+      ]
+    },
+    {
+      "id": "q038",
+      "question": "How do I make the app server trust the X-Forwarded headers sent by a proxy?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/https.md#proxy-forwarded-headers",
+          "evidence": "--forwarded-allow-ips"
+        }
+      ]
+    },
+    {
+      "id": "q039",
+      "question": "How do I pin the FastAPI version so upgrades do not break my app?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/versions.md#pin-your-fastapi-version",
+          "evidence": "that would mean that you would use the versions 0.112.0 or above, but less than 0.113.0"
+        }
+      ]
+    },
+    {
+      "id": "q040",
+      "question": "Which part of a FastAPI version number can introduce breaking changes?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/versions.md#about-versions",
+          "evidence": "Breaking changes and new features are added in \"MINOR\" versions."
+        }
+      ]
+    },
+    {
+      "id": "q041",
+      "question": "Are new Pydantic versions compatible with FastAPI?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/versions.md#about-pydantic",
+          "evidence": "new versions of Pydantic (above 1.0.0) are always compatible with FastAPI"
+        }
+      ]
+    },
+    {
+      "id": "q042",
+      "question": "How do I start several worker processes for my FastAPI app?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/server-workers.md#multiple-workers",
+          "evidence": "You can start multiple workers with the --workers command line option"
+        }
+      ]
+    },
+    {
+      "id": "q043",
+      "question": "Does using multiple workers solve all the deployment concerns?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/server-workers.md#deployment-concepts",
+          "evidence": "using workers would mainly help with the replication part, and a little bit with the restarts, but you still need to take care of the others"
+        }
+      ]
+    },
+    {
+      "id": "q044",
+      "question": "Which ASGI server does the fastapi command use by default?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/manually.md#asgi-servers",
+          "evidence": "this is the one that comes by default in the fastapi command"
+        }
+      ]
+    },
+    {
+      "id": "q045",
+      "question": "Which ASGI servers can I use besides Uvicorn?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/manually.md#asgi-servers",
+          "evidence": "an ASGI server compatible with HTTP/2 and Trio among other features"
+        }
+      ]
+    },
+    {
+      "id": "q046",
+      "question": "What command do I use to serve my FastAPI app in production?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "deployment/manually.md#use-the-fastapi-run-command",
+          "evidence": "use fastapi run to serve your FastAPI application"
+        }
+      ]
+    },
+    {
+      "id": "q047",
+      "question": "Why is a field with a default value marked as required in the response schema of the docs?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/separate-openapi-schemas.md#model-for-output-response-data",
+          "evidence": "The way to describe this in OpenAPI, is to mark that field as required, because it will always be there."
+        }
+      ]
+    },
+    {
+      "id": "q048",
+      "question": "Why does OpenAPI show two schemas, Item-Input and Item-Output, for the same model?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/separate-openapi-schemas.md#model-for-input-and-output-in-docs",
+          "evidence": "you will see that there are two, one Item-Input and one Item-Output"
+        }
+      ]
+    },
+    {
+      "id": "q049",
+      "question": "How do I disable syntax highlighting in Swagger UI?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "easy",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/configure-swagger-ui.md#disable-syntax-highlighting",
+          "evidence": "you can disable it by setting syntaxHighlight to False"
+        }
+      ]
+    },
+    {
+      "id": "q050",
+      "question": "Can I pass JavaScript functions to Swagger UI through swagger_ui_parameters?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/configure-swagger-ui.md#javascript-only-settings",
+          "evidence": "These are JavaScript objects, not strings, so you can't pass them from Python code directly."
+        }
+      ]
+    },
+    {
+      "id": "q051",
+      "question": "How do I turn off the OpenAPI docs in production using an environment variable?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/conditional-openapi.md#conditional-openapi-from-settings-and-env-vars",
+          "evidence": "disable OpenAPI (including the UI docs) by setting the environment variable OPENAPI_URL to the empty string"
+        }
+      ]
+    },
+    {
+      "id": "q052",
+      "question": "Does hiding the API docs in production make my API secure?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/conditional-openapi.md#about-security-apis-and-docs",
+          "evidence": "be the way to protect your API"
+        }
+      ]
+    },
+    {
+      "id": "q053",
+      "question": "How do I disable the automatic docs before configuring a custom CDN?",
+      "lang": "en",
+      "category": "how-to",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/custom-docs-ui-assets.md#disable-the-automatic-docs",
+          "evidence": "set their URLs to None when creating your FastAPI app"
+        }
+      ]
+    },
+    {
+      "id": "q054",
+      "question": "When should I self-host the Swagger UI JavaScript and CSS files?",
+      "lang": "en",
+      "category": "concept",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/custom-docs-ui-assets.md#self-hosting-javascript-and-css-for-docs",
+          "evidence": "need your app to keep working even while offline, without open Internet access, or in a local network"
+        }
+      ]
+    },
+    {
+      "id": "q055",
+      "question": "Can I still use pydantic.v1 models in current FastAPI versions?",
+      "lang": "en",
+      "category": "gotcha",
+      "difficulty": "hard",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/migrate-from-pydantic-v1-to-pydantic-v2.md#fastapi-support-for-pydantic-v1-in-v2",
+          "evidence": "using a pydantic.v1 model in your app will raise an error"
+        }
+      ]
+    },
+    {
+      "id": "q056",
+      "question": "Is there a tool that automates migrating my code from Pydantic v1 to v2?",
+      "lang": "en",
+      "category": "lookup",
+      "difficulty": "medium",
+      "verified_by": "model",
+      "expected": [
+        {
+          "id": "how-to/migrate-from-pydantic-v1-to-pydantic-v2.md#bump-pydantic",
+          "evidence": "This tool will help you to automatically change most of the code that needs to be changed."
+        }
+      ]
+    }
+  ]
+}

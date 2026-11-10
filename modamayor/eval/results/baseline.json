@@ -1,0 +1,272 @@
+{
+  "variant": "baseline",
+  "k": 4,
+  "summary": {
+    "passed": 17,
+    "total": 23,
+    "by_type": {
+      "directa": [
+        8,
+        10
+      ],
+      "multi-doc": [
+        1,
+        4
+      ],
+      "contradiccion": [
+        5,
+        6
+      ],
+      "sin-respuesta": [
+        3,
+        3
+      ]
+    }
+  },
+  "results": [
+    {
+      "id": "m01",
+      "type": "directa",
+      "question": "Cuanto sale la remera lisa de algodon?",
+      "answer": "La remera lisa de algodón cuesta $4800.",
+      "passed": false,
+      "missing": [
+        "12"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m02",
+      "type": "directa",
+      "question": "Que trae la curva de remeras?",
+      "answer": "La curva de remeras tiene talles 3 S, 3 M, 3 L y 3 XL.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m03",
+      "type": "directa",
+      "question": "Cual es el minimo para llevar camperas rompevientos y a cuanto estan?",
+      "answer": "El mínimo para llevar camperas rompevientos es $200.000 por pedido. Las camperas rompevientos están a $24.900 unidad, con mínimo x4.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m04",
+      "type": "directa",
+      "question": "En que talles hay jean mom?",
+      "answer": "Talles jean mom: 36 al 46.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m05",
+      "type": "directa",
+      "question": "Aceptan tarjeta de credito?",
+      "answer": "No, no aceptamos tarjetas de crédito.",
+      "passed": false,
+      "missing": [
+        "efectivo",
+        "transferencia"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m06",
+      "type": "directa",
+      "question": "Hasta que hora atienden los sabados y donde estan?",
+      "answer": "Atendemos los sábados de 9 a 13 hs en el local de Av. Pueyrredón 512, Once, CABA.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m07",
+      "type": "directa",
+      "question": "Cuanto tardan en preparar el pedido?",
+      "answer": "Preparamos el pedido dentro de las 48 horas hábiles después de acreditado el pago.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m08",
+      "type": "directa",
+      "question": "Si me llega algo que no me gusta puedo cambiarlo o me devuelven la plata?",
+      "answer": "Podés cambiarlo si es por falla de fábrica, dentro de los 7 días y con la etiqueta puesta. No hacemos devoluciones de dinero.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m09",
+      "type": "directa",
+      "question": "En que colores viene el jean de hombre y hasta que talle llega?",
+      "answer": "El jean de hombre viene en azul, negro y celeste, y va hasta el talle 48.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m10",
+      "type": "directa",
+      "question": "Hice la transferencia hoy a las 16, desde cuando cuenta el plazo?",
+      "answer": "La transferencia que hiciste hoy a las 16 se considera acreditada desde mañana, porque los pagos que entran después de las 15 se cuentan como del día hábil siguiente. El plazo empieza desde ese día.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m11",
+      "type": "multi-doc",
+      "question": "Si llevo 40 buzos frisa y pago por transferencia, cuanto pago en total?",
+      "answer": "Para 40 buzos frisa, el precio unitario es $10.000. Con el descuento del 8% por transferencia, pagás $9.200 por buzo. En total, pagás $368.000.",
+      "passed": false,
+      "missing": [
+        "712000",
+        "655040"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m12",
+      "type": "multi-doc",
+      "question": "Con una sola curva de remeras lisas llego al minimo de compra?",
+      "answer": "No, porque la compra mínima es de $200.000 por pedido y una curva de remeras lisas no alcanza. Te paso con un comercial.",
+      "passed": false,
+      "missing": [
+        "57600"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m13",
+      "type": "multi-doc",
+      "question": "Compro 25 jeans clasicos de hombre y pago en efectivo, soy de CABA, el envio es gratis?",
+      "answer": "Sí, el envío es gratis porque compraste más de $400.000 y sos de CABA.",
+      "passed": false,
+      "missing": [
+        "487500"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m14",
+      "type": "multi-doc",
+      "question": "Tienen jean clasico negro talle 46?",
+      "answer": "El jean clasico negro talle 46 está agotado, pero entra de nuevo más o menos el 20/11.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m15",
+      "type": "contradiccion",
+      "question": "A cuanto esta el buzo frisa canguro?",
+      "answer": "El buzo frisa canguro está a $17.800.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m16",
+      "type": "contradiccion",
+      "question": "Cual es la compra minima?",
+      "answer": "La compra mínima es de $200.000 por pedido.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m17",
+      "type": "contradiccion",
+      "question": "Cuanto descuento hay si pago por transferencia?",
+      "answer": "El descuento por transferencia es del 8%.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m18",
+      "type": "sin-respuesta",
+      "question": "Hacen estampado personalizado con el logo de mi marca?",
+      "answer": "No tenés ese dato y te paso con una persona.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m19",
+      "type": "sin-respuesta",
+      "question": "Emiten factura A?",
+      "answer": "No tenés ese dato. Te paso con una persona.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m20",
+      "type": "sin-respuesta",
+      "question": "Tienen ropa de nenes?",
+      "answer": "No tenés ese dato y te paso con una persona.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m21",
+      "type": "contradiccion",
+      "question": "Cuanto sale la remera estampada?",
+      "answer": "La remera estampada cuesta $5600 por unidad.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m22",
+      "type": "contradiccion",
+      "question": "A cuanto esta el jean clasico de hombre?",
+      "answer": "El jean clásico de hombre negro talle 46 está agotado. El precio es de $3.500. Vuelve a consultar el 20/11 para ver si entra de nuevo.",
+      "passed": false,
+      "missing": [
+        "19500"
+      ],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    },
+    {
+      "id": "m23",
+      "type": "contradiccion",
+      "question": "Cuanto cuesta la calza larga de lycra?",
+      "answer": "La calza larga de lycra cuesta $6.900 por unidad.",
+      "passed": true,
+      "missing": [],
+      "forbidden_hits": [],
+      "handoff_ok": true
+    }
+  ]
+}

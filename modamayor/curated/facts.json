@@ -1,0 +1,32 @@
+{
+  "articles": [
+    {"id": "remera_lisa", "name": "Remera lisa de algodón cuello redondo", "aliases": ["REM LISA ALG"], "price": 4800, "min_units": 12, "details": "Se vende por curva de 12: 3 S, 3 M, 3 L, 3 XL.", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "remera_estampada", "name": "Remera estampada, varios diseños", "aliases": ["REM ESTAMP"], "price": 5600, "min_units": 12, "details": "Se vende por curva de 12: 3 S, 3 M, 3 L, 3 XL.", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "jean_clasico_hombre", "name": "Jean clásico de hombre, corte recto", "aliases": ["JN CLAS H"], "price": 19500, "min_units": 6, "details": "Talles 38 al 48. Colores: azul, negro y celeste.", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "jean_mom_mujer", "name": "Jean mom de mujer, tiro alto", "aliases": ["JN MOM M"], "price": 21000, "min_units": 6, "details": "Talles 36 al 46.", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "buzo_frisa_canguro", "name": "Buzo de friza canguro", "aliases": ["BUZO FRISA CANG"], "price": 17800, "min_units": 6, "details": "Talles S al XXL.", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "campera_rompevientos", "name": "Campera rompevientos", "aliases": ["CAMP ROMPEVIENTOS"], "price": 24900, "min_units": 4, "details": "", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"},
+    {"id": "calza_larga_lycra", "name": "Calza larga de lycra", "aliases": ["CALZA LARGA LYCRA"], "price": 6900, "min_units": 12, "details": "Talles 1 al 4 (equivale a S hasta XXL).", "valid_from": "2026-10-14", "source": "lista_precios_oct2026.txt"}
+  ],
+  "rules": {
+    "min_purchase": [
+      {"value": 250000, "from": "2026-06-01", "source": "condiciones_de_venta.md"},
+      {"value": 200000, "from": "2026-11-01", "source": "chat_dueno_whatsapp.txt"}
+    ],
+    "transfer_discount_pct": [
+      {"value": 10, "from": "2026-06-01", "source": "condiciones_de_venta.md"},
+      {"value": 8, "from": "2026-11-01", "source": "chat_dueno_whatsapp.txt"}
+    ],
+    "free_shipping_from": [
+      {"value": 400000, "from": "2026-06-01", "source": "condiciones_de_venta.md"}
+    ]
+  },
+  "stock": [
+    {"id": "jean_clasico_negro_46", "text": "El jean clásico de hombre negro talle 46 está agotado. Reingresa aproximadamente el 20/11.", "from": "2026-10-28", "source": "chat_dueno_whatsapp.txt"}
+  ],
+  "policies": [
+    {"id": "atencion", "text": "Atención: local y depósito en Av. Pueyrredón 512, Once, CABA. Atendemos de lunes a viernes de 9 a 18 hs y sábados de 9 a 13 hs. Los pedidos por WhatsApp se responden en el mismo horario.", "from": "2026-06-01", "source": "condiciones_de_venta.md"},
+    {"id": "plazos", "text": "Plazos: preparamos el pedido dentro de las 48 horas hábiles de acreditado el pago. El pedido se empieza a preparar cuando el pago está acreditado. Las transferencias que entran después de las 15 hs se toman como del día hábil siguiente.", "from": "2026-10-28", "source": "condiciones_de_venta.md"},
+    {"id": "cambios", "text": "Cambios: se aceptan cambios solo por falla de fábrica, dentro de los 7 días corridos de recibido el pedido y con la etiqueta puesta. No hacemos devoluciones de dinero.", "from": "2026-06-01", "source": "condiciones_de_venta.md"}
+  ]
+}
