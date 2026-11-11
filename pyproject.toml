@@ -17,5 +17,8 @@ dependencies = [
 [dependency-groups]
 dev = ["pytest"]
 
+[tool.setuptools]
+packages = ["modamayor", "wabot", "groundtruth"]
+
 [tool.pytest.ini_options]
 testpaths = ["modamayor", "wabot"]
