@@ -3,8 +3,11 @@
 A retrieval-augmented generation (RAG) pipeline for a small wholesale shop, with an eval harness that scores every change, served as a WhatsApp Cloud API webhook.
 
 The shop in the corpus ("Casa Beltran Mayorista"), its price lists, its sales conditions, and the owner chat are fictional.
-The only real business details in this repository are the contact data in [the privacy policy](docs/privacidad.md).
 The bot is being prepared for production at the business Sistar, so the corpus will move to real data.
+Business data stays out of this repository.
+Git ignores `docs/privacidad.md` and the `modamayor/docs/` corpus, so they exist only on the machine that runs the bot.
+The eval questions, the eval results, and the tests are public.
+Without `modamayor/docs/`, you cannot regenerate the eval results from a fresh clone, and the test that loads the corpus is skipped.
 
 ## What is in it
 

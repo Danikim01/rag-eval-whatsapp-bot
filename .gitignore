@@ -8,3 +8,5 @@ data/
 chroma_data*/
 verify-evidence/
 *.egg-info/
+docs/privacidad.md
+modamayor/docs/

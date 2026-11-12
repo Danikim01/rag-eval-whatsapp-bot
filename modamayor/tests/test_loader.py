@@ -1,5 +1,7 @@
 from pathlib import Path
 
+import pytest
+
 from modamayor.loader import Chunk, chunk_chat, chunk_markdown, chunk_pricelist, load_chunks
 
 DOCS = Path(__file__).resolve().parent.parent / "docs"
@@ -71,6 +73,7 @@ def test_chat_continuation_lines_join_previous_message():
     assert "sigue aca" in chunks[0].text
 
 
+@pytest.mark.skipif(not DOCS.is_dir(), reason="business corpus is not published")
 def test_load_chunks_has_unique_ids_and_all_sources():
     chunks = load_chunks(DOCS)
     ids = [c.id for c in chunks]
