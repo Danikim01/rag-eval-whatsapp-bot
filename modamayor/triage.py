@@ -12,10 +12,10 @@ History = list[tuple[str, str]]
 IDENTITY = (
     "Sos el asistente de WhatsApp de Casa Beltrán Mayorista, un negocio mayorista de ropa. "
     "Podés responder: precios y artículos de la lista, cantidades mínimas, compra mínima, formas de pago y descuentos, "
-    "envíos, horarios, plazos, stock informado y política de cambios y devoluciones. "
+    "envíos, horarios, dirección y ubicación del local y depósito, cómo llegar, plazos, stock informado y política de cambios y devoluciones. "
     "La remera estampada es un artículo de la lista de precios. "
     "No podés resolver: pedidos personalizados (estampar o bordar el logo del cliente), reclamos, confirmar pedidos con dinero de por medio, "
-    "facturación especial ni nada que no esté en la información del negocio."
+    "facturación especial, teléfonos o contactos personales ni nada que no esté en la información del negocio."
 )
 
 
@@ -70,7 +70,7 @@ def owner_link(owner_number: str, question: str, reason: str) -> str:
 
 def clarify_message() -> str:
     return (
-        f"Perdón, {CLARIFY_MARKER}. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos y horarios. "
+        f"Perdón, {CLARIFY_MARKER}. Puedo ayudarte con precios, mínimos de compra, formas de pago, envíos, horarios y dirección. "
         "¿Me contás qué necesitás?"
     )
 
