@@ -4,6 +4,7 @@ import json
 import logging
 from collections import defaultdict
 from collections.abc import Awaitable, Callable
+from contextlib import asynccontextmanager
 
 from fastapi import BackgroundTasks, FastAPI, HTTPException, Query, Request, Response
 
@@ -25,6 +26,10 @@ Sender = Callable[[str, str], Awaitable[None]]
 Responder = Callable[[str, list[tuple[str, str]]], str]
 
 HISTORY_TURNS = 6
+MAX_ATTEMPTS = 3
+RETENTION_DAYS = 365
+MAX_TURNS_PER_SENDER = 200
+MAX_PENDING_AGE_HOURS = 24
 
 
 def create_app(
@@ -40,25 +45,43 @@ def create_app(
         from wabot.rag_responder import build_responder
 
         responder = build_responder(settings.owner_phone_number)
-    app = FastAPI()
+    in_flight: set[str] = set()
     chat_locks: defaultdict[str, asyncio.Lock] = defaultdict(asyncio.Lock)
 
     async def handle(message: InboundText) -> None:
-        if not store.claim(message.message_id):
+        if message.message_id in in_flight or store.is_done(message.message_id):
             log.info("duplicate message_id=%s", message.message_id)
             return
-        async with chat_locks[message.sender]:
-            try:
-                history = store.recent(message.sender, HISTORY_TURNS)
-                text = await asyncio.to_thread(responder, message.text, history)
-                await sender(message.sender, text)
-            except Exception:
-                store.release(message.message_id)
-                log.exception("reply failed message_id=%s", message.message_id)
-                return
-            store.add_turn(message.sender, "user", message.text)
-            store.add_turn(message.sender, "assistant", text)
-        log.info("replied message_id=%s", message.message_id)
+        in_flight.add(message.message_id)
+        try:
+            async with chat_locks[message.sender]:
+                try:
+                    history = store.recent(message.sender, HISTORY_TURNS)
+                    text = await asyncio.to_thread(responder, message.text, history)
+                    await sender(message.sender, text)
+                    store.complete(message.message_id, message.sender, message.text, text)
+                except Exception:
+                    store.record_failure(message.message_id, MAX_ATTEMPTS)
+                    log.exception("reply failed message_id=%s", message.message_id)
+                    return
+            log.info("replied message_id=%s", message.message_id)
+        finally:
+            in_flight.discard(message.message_id)
+
+    async def recover() -> None:
+        store.prune(RETENTION_DAYS, MAX_TURNS_PER_SENDER)
+        pending = store.pending(MAX_PENDING_AGE_HOURS)
+        if pending:
+            log.info("recovering pending=%d", len(pending))
+        await asyncio.gather(*(handle(InboundText(m, w, t)) for m, w, t in pending))
+
+    @asynccontextmanager
+    async def lifespan(_: FastAPI):
+        task = asyncio.create_task(recover())
+        yield
+        await task
+
+    app = FastAPI(lifespan=lifespan)
 
     async def handle_unsupported(message: InboundUnsupported) -> None:
         if not store.claim(message.message_id):
@@ -93,6 +116,7 @@ def create_app(
             log.warning("invalid json with valid signature")
             return Response(status_code=200)
         for message in extract_text_messages(payload):
+            store.enqueue(message.message_id, message.sender, message.text)
             background.add_task(handle, message)
         for unsupported in extract_unsupported_messages(payload):
             background.add_task(handle_unsupported, unsupported)
