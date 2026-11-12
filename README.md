@@ -2,13 +2,16 @@
 
 A retrieval-augmented generation (RAG) pipeline for a small wholesale shop, with an eval harness that scores every change, served as a WhatsApp Cloud API webhook.
 
-The shop ("Casa Beltran Mayorista"), its price lists, its sales conditions, and the owner chat are fictional.
-No real business data is in this repository.
+The shop in the corpus ("Casa Beltran Mayorista"), its price lists, its sales conditions, and the owner chat are fictional.
+The only real business details in this repository are the contact data in [the privacy policy](docs/privacidad.md).
+The bot is being prepared for production at the business Sistar, so the corpus will move to real data.
 
 ## What is in it
 
 - `modamayor/` holds the RAG pipeline, the curated-facts retriever, the quote calculator, the triage step, and the eval runners.
 - `wabot/` holds the FastAPI webhook that receives WhatsApp messages and replies with the pipeline.
+  It stores each message in SQLite before it acknowledges Meta, so a crash does not lose a message.
+- `Dockerfile`, `docker-compose.yml`, and `Caddyfile` run the webhook behind automatic HTTPS.
 - `groundtruth/` holds a 2nd golden set, built from the FastAPI documentation, with a validator.
 - `.claude/skills/verify/` holds a script that drives a running offline instance of the webhook.
 
@@ -52,7 +55,7 @@ You need Python 3.12 or later and [Ollama](https://ollama.com) running locally.
 	.venv/bin/python -m pytest -q
 	```
 
-	Expect 114 passed.
+	Expect 136 passed.
 
 4. Run one eval.
 
@@ -60,11 +63,40 @@ You need Python 3.12 or later and [Ollama](https://ollama.com) running locally.
 	.venv/bin/python -m modamayor.run_eval --variant curated_quote_k4 --chunks curated --quote
 	```
 
+## Run with Docker
+
+The compose file starts the webhook and Caddy.
+Caddy gets a TLS certificate for your domain and proxies only `/webhook` and `/health`.
+Every other path returns 404.
+
+1. Point a DNS record for your domain at the server.
+2. Copy `wabot/.env.example` to `.env` in the repository root and fill in every value, including `DOMAIN`.
+3. Start the stack.
+
+	```
+	docker compose up -d --build
+	```
+
+4. Check the webhook.
+
+	```
+	curl https://$DOMAIN/health
+	```
+
+	The response is `{"status": "ok"}`.
+
+The SQLite database lives in the `wabot-data` volume, so it survives a rebuild.
+The webhook needs a model provider.
+By default it reaches Ollama on the host through `OLLAMA_URL`.
+Ollama listens only on `127.0.0.1` by default, and a container cannot reach that address.
+On a server, set `LLM_PROVIDER`, `LLM_MODEL`, `EMBED_PROVIDER`, and `EMBED_MODEL` to an API provider instead.
+Run a single webhook process, because the per-sender locks and the retry queue live in memory.
+
 ## Documentation
 
 - [Architecture](docs/architecture.md) explains why the pipeline has the parts it has.
 - [Evals](docs/evals.md) lists the variants, the commands that regenerate each result, and the triage sets.
-- [Webhook](docs/webhook.md) lists the environment variables, the endpoints, and the checks that run on each message.
+- [Webhook](docs/webhook.md) lists the environment variables, the endpoints, the delivery guarantees, and the checks that run on each message.
 - [Golden set](docs/groundtruth.md) explains how to rebuild the FastAPI documentation corpus and validate the golden set.
 
 ## License
