@@ -37,6 +37,10 @@ class MessageStore:
             )
             self._conn.commit()
 
+    def ping(self) -> None:
+        with self._lock:
+            self._conn.execute("SELECT 1").fetchone()
+
     def add_turn(self, wa_id: str, role: str, text: str) -> None:
         with self._lock:
             self._conn.execute("INSERT INTO turns (wa_id, role, text) VALUES (?, ?, ?)", (wa_id, role, text))

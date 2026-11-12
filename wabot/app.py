@@ -95,6 +95,15 @@ def create_app(
             return
         log.info("replied unsupported message_id=%s kind=%s", message.message_id, message.kind)
 
+    @app.get("/health")
+    async def health() -> Response:
+        try:
+            await asyncio.to_thread(store.ping)
+        except Exception:
+            log.exception("health check failed")
+            return Response(content='{"status": "unavailable"}', status_code=503, media_type="application/json")
+        return Response(content='{"status": "ok"}', media_type="application/json")
+
     @app.get("/webhook")
     async def verify(
         mode: str | None = Query(None, alias="hub.mode"),
