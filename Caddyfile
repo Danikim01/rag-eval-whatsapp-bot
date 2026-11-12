@@ -1,0 +1,12 @@
+{$DOMAIN} {
+	encode gzip
+
+	@public path /webhook /health
+	handle @public {
+		reverse_proxy bot:8000
+	}
+
+	handle {
+		respond "Not found" 404
+	}
+}
