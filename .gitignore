@@ -10,3 +10,5 @@ verify-evidence/
 *.egg-info/
 docs/privacidad.md
 modamayor/docs/
+docs/decisiones-mvp.md
+.paul/
