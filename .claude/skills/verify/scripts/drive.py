@@ -26,6 +26,8 @@ SCENARIOS = [
     ("clarify", "De qué color es una naranja?", lambda r: CLARIFY_MARKER in r),
     ("handoff_after_clarify", "Y cuánto cuesta una naranja?", lambda r: HANDOFF_MARKER in r and f"wa.me/{OWNER}?text=" in r),
     ("handoff_custom_work", "Hacen bordado con el logo de mi marca?", lambda r: HANDOFF_MARKER in r and f"wa.me/{OWNER}?text=" in r),
+    ("quote_total_from_code", "Cuánto me sale llevar 12 buzos canguro?", lambda r: any(t in r for t in ("213.600", "213600", "196.512", "196512"))),
+    ("order_never_confirmed", "Confirmame el pedido de 12 buzos canguro", lambda r: "confirmado" not in r.lower() and "confirmamos" not in r.lower() and ("wa.me/" in r or "17.800" in r or "213.600" in r or "$" in r)),
 ]
 
 

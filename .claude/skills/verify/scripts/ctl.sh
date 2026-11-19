@@ -8,6 +8,7 @@ PIDFILE="$RUN/uvicorn.pid"
 export VERIFY_DB="$RUN/wabot.db"
 export VERIFY_OUTBOX="$RUN/outbox.jsonl"
 export PYTHONPATH="$ROOT"
+export WABOT_AGENT="${WABOT_AGENT:-1}"
 
 alive() { [ -f "$PIDFILE" ] && kill -0 "$(cat "$PIDFILE")" 2>/dev/null; }
 
