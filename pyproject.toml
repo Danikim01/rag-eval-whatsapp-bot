@@ -10,6 +10,7 @@ dependencies = [
     "fastapi",
     "httpx",
     "markdown-it-py",
+    "pydantic",
     "python-dotenv",
     "uvicorn",
 ]
@@ -18,7 +19,7 @@ dependencies = [
 dev = ["pytest"]
 
 [tool.setuptools]
-packages = ["modamayor", "wabot", "groundtruth"]
+packages = ["modamayor", "modamayor.agent", "wabot", "groundtruth"]
 
 [tool.pytest.ini_options]
 testpaths = ["modamayor", "wabot"]
